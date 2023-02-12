@@ -119,7 +119,7 @@ CUDA_VISIBLE_DEVICES=0  python3 main.py --arch="rtsrn" --test_model="CRNN" --bat
 After getting the model after the three-stage training, it is consistent with the training, -- stu=3 and -- sr_ share。
 This command is in test_ Multi.sh, after use, the performance comparison table can be obtained to summarize the results of CRNN, and test can be replaced_ Model can obtain the results of two other text recognizers.
 
-## 10 Related Works :wink:
+## 10 Related Works 
 · Text Gestalt: Stroke-Aware Scene Text Image Super-Resolution [[Paper]](https://arxiv.org/pdf/2112.08171.pdf) [[Code]](https://github.com/FudanVI/FudanOCR)
 
 · A Text Attention Network for Spatial Deformation Robust Scene Text Image Super-resolution [[Paper]](https://arxiv.org/pdf/2203.09388.pdf) [[Code]](https://github.com/mjq11302010044/TATT)
