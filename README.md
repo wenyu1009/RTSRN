@@ -107,7 +107,7 @@ Use this command to test the results of CRNN in the performance comparison table
 CUDA_VISIBLE_DEVICES=0 python3 main.py --arch="rtsrn" --test_model="CRNN" --batch_size=48 --STN   --gradient  --use_distill --stu_iter=3 --vis_dir='xxx' --mask --triple_clues --text_focus --lca
 ```
 
-If three-stage training is used, -- stu=3 and -- sr are removed_ Share Use multi-stage training<br>
+If three-stage training is used, -- stu=3 and -- sr_share are removed <br>
 
 
 
