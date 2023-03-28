@@ -12,7 +12,7 @@ Text Image Super-Resolution, super-resolution reconstruction for text images. Th
 Our model compared to other SOTA models on the TextZoom dataset. The values in the table are the accuracy of text recognition, where CRNN, MORAN and ASTER are three different text recognizers.
 <br>
 The last three lines are a comparison of multi-stage models, and our model has greatly improved performance after multi-stage training.
-## Model Introduction
+## 3 Model Introduction
 
 Our model is as follows:
 ![visualization](./pic/architecture.jpg)
@@ -20,7 +20,7 @@ Our model is as follows:
 - There are two input paths, one path is the low-quality image $I_{LR}$ entering STN to extract image features; the other path uses CRNN to extract detailed text as text clues input into the main network MSRB for the same low-quality image $I_{LR}$.
 - The features obtained by the trunk network are input into the up-sampling module Pixel-shuffle to obtain the super-resolution feature map, and then input into the Pixel-wise attention module (PAM) to optimize the feature map.
 - Finally, a CNN is used to obtain the final super-resolution image $I_{SR}$.
-## 3 Environment:
+## 4 Environment:
 
 
 ![python](https://img.shields.io/badge/python-v3.8-green.svg?style=plastic)
@@ -33,7 +33,7 @@ Our model is as follows:
 Other possible python packages like pyyaml, cv2, Pillow and imgaug
 ```
 
-## 4 Preparation for running
+## 5 Preparation for running
 
 ### Textzoom
 
@@ -50,7 +50,7 @@ Change TRAIN.VAL.rec_pretrained in ./configs/super_resolution.yaml to your Aster
 please refer to  [STT](https://github.com/FudanVI/FudanOCR/tree/main/scene-text-telescope)
 the path of pkl in weight_ce_loss.py       the path of pth in text_focus_loss.py 
 Change these path  for yourself
-## 5 Code Structure
+## 6 Code Structure
 
 
 RTSRN <br>
@@ -69,7 +69,7 @@ RTSRN <br>
 &ensp;rec_pth the model parameters of the text recognizer, including CRNN, ASTER, and MORAN.<br>
 
 
-## 6 Single stage train
+## 7 Single stage train
 
 
 ```
@@ -82,7 +82,7 @@ We can do this:
 nohup sh train.sh  > log/train_result 2>&1 &
 ```
 
-## 7 Single stage test
+## 8 Single stage test
 
 
 
@@ -99,7 +99,7 @@ Use this command to test the results of CRNN in the performance comparison table
 
 
 
-## 8 Multi-stage train
+## 9 Multi-stage train
 
 
 
@@ -111,7 +111,7 @@ If three-stage training is used, -- stu=3 and -- sr_share are removed <br>
 
 
 
-## 9 Multi-stage test
+## 10 Multi-stage test
 
 ```
 CUDA_VISIBLE_DEVICES=0  python3 main.py --arch="rtsrn" --test_model="CRNN" --batch_size=48 --STN  --gradient  --use_distill --stu_iter=3 --vis --vis_dir='vis/xxx' --mask --go_test --resume='ckpt/xxx/' --triple_clues --text_focus --lca
@@ -119,7 +119,7 @@ CUDA_VISIBLE_DEVICES=0  python3 main.py --arch="rtsrn" --test_model="CRNN" --bat
 After getting the model after the three-stage training, it is consistent with the training, -- stu=3 and -- sr_ share。
 This command is in test_ Multi.sh, after use, the performance comparison table can be obtained to summarize the results of CRNN, and test can be replaced_ Model can obtain the results of two other text recognizers.
 
-## 10 Related Works 
+## 11 Related Works 
 · Text Gestalt: Stroke-Aware Scene Text Image Super-Resolution [[Paper]](https://arxiv.org/pdf/2112.08171.pdf) [[Code]](https://github.com/FudanVI/FudanOCR)
 
 · A Text Attention Network for Spatial Deformation Robust Scene Text Image Super-resolution [[Paper]](https://arxiv.org/pdf/2203.09388.pdf) [[Code]](https://github.com/mjq11302010044/TATT)
