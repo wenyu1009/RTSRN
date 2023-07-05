@@ -25,7 +25,7 @@ In Equation (1):
 $$I_{SR}= f_{pam}(f_{ps}(f_{blstm}([f_{b}(STN(I_{LR})),h_{t}]))))$$
 
 In Equation (2):
-$$\boldsymbol{MSRB}(\boldsymbol{i}_{lr},\boldsymbol{h}_{t})=\boldsymbol{BLSTM}([\boldsymbol{MLP}(\boldsymbol{i}_{lr}+\boldsymbol{MADM}(\boldsymbol{i}_{lr})),\boldsymbol{h}_{t}])$$
+$$\boldsymbol MSRB(\boldsymbol{i}_{lr},\boldsymbol{h}_{t})=\boldsymbol BLSTM ([\boldsymbol{MLP}(\boldsymbol{i}_{lr}+\boldsymbol{MADM}(\boldsymbol i_{lr})),\boldsymbol h_{t}])$$
 
 Both formulas involve the extraction of features from the low-resolution input using the MSRB with residual structures. Then, the extracted features are combined with textual cues and fed into a bidirectional LSTM for integrating image features with text information. The function $f_{blstm}$ in Equation (1) corresponds to the $BLSTM$ in Equation (2). The function $f_{b}$ in Equation (1) is further elaborated as $\boldsymbol{MLP}(\boldsymbol{i}_{lr}+\boldsymbol{MADM}(\boldsymbol{i}_{lr}))$ in Equation (2).
 
