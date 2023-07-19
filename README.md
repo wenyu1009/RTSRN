@@ -22,14 +22,10 @@ Our model is as follows:
 - Finally, a CNN is used to obtain the final super-resolution image $I_{SR}$.
 ## 4 Environment:
 
-![python](https://img.shields.io/badge/python-v3.8-green.svg?style=plastic)
-![pytorch](https://img.shields.io/badge/pytorch-v1.10-green.svg?style=plastic)
-![cuda](https://img.shields.io/badge/cuda-v11.0-green.svg?style=plastic)
-![numpy](https://img.shields.io/badge/numpy-1.18-green.svg?style=plastic)
-![timm](https://img.shields.io/badge/timm-0.6.11-green.svg?style=plastic)
+Please refer to requirement.txt.
 
 ```
-Other possible python packages like pyyaml, cv2, Pillow and imgaug，Please refer to requirement.text.
+pip install -r requirements.txt
 ```
 
 ## 5 Preparation for running
