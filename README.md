@@ -7,7 +7,7 @@
 Text Image Super-Resolution, super-resolution reconstruction for text images. The reconstruction results of RTSRN on the TextZoom dataset are as follows:
 ![visualization](./pic/visualization.jpg)
 ## 2 Performance Comparison:
-：
+
 ![main table](./pic/main_table.png)
 Our model compared to other SOTA models on the TextZoom dataset. The values in the table are the accuracy of text recognition, where CRNN, MORAN and ASTER are three different text recognizers.
 <br>
@@ -22,7 +22,6 @@ Our model is as follows:
 - Finally, a CNN is used to obtain the final super-resolution image $I_{SR}$.
 ## 4 Environment:
 
-
 ![python](https://img.shields.io/badge/python-v3.8-green.svg?style=plastic)
 ![pytorch](https://img.shields.io/badge/pytorch-v1.10-green.svg?style=plastic)
 ![cuda](https://img.shields.io/badge/cuda-v11.0-green.svg?style=plastic)
@@ -30,7 +29,7 @@ Our model is as follows:
 ![timm](https://img.shields.io/badge/timm-0.6.11-green.svg?style=plastic)
 
 ```
-Other possible python packages like pyyaml, cv2, Pillow and imgaug
+Other possible python packages like pyyaml, cv2, Pillow and imgaug，Please refer to requirement.text.
 ```
 
 ## 5 Preparation for running
@@ -50,26 +49,8 @@ Change TRAIN.VAL.rec_pretrained in ./configs/super_resolution.yaml to your Aster
 please refer to  [STT](https://github.com/FudanVI/FudanOCR/tree/main/scene-text-telescope)
 the path of pkl in weight_ce_loss.py       the path of pth in text_focus_loss.py 
 Change these path  for yourself
-## 6 Code Structure
 
-
-RTSRN <br>
-&ensp;ckpt   Location where the model is saved<br>
-&ensp;&ensp;-x Save folder of a training <br>
-&ensp;config  Location where the model hyperparameters are saved  <br>
-&ensp;&ensp;-super_resolution.yaml  Part of the hyperparameters, specifying the location of the dataset, etc.  <br>
-&ensp;dataset  Dataset-related functions  <br>
-&ensp;interface  The interface trains and tests related functions, where the train class of super_resolution inherits from base.   <br>
-&ensp;log  the folder for saving training logs.<br>
-&ensp;loss  the folder for the loss function used in training.  <br>
-&ensp;model  the folder for model definition. <br>
-&ensp;&ensp;-rtsrn.py    our model<br>
-&ensp;pic  the folder for saving images used in markdown.<br>
-&ensp;tensorboard tensorboard log<br>
-&ensp;rec_pth the model parameters of the text recognizer, including CRNN, ASTER, and MORAN.<br>
-
-
-## 7 Single stage train
+## 6 Single stage train
 
 
 ```
@@ -82,7 +63,7 @@ We can do this:
 nohup sh train.sh  > log/train_result 2>&1 &
 ```
 
-## 8 Single stage test
+## 7 Single stage test
 
 
 
@@ -99,7 +80,7 @@ Use this command to test the results of CRNN in the performance comparison table
 
 
 
-## 9 Multi-stage train
+## 8 Multi-stage train
 
 
 
@@ -111,7 +92,7 @@ If three-stage training is used, -- stu=3 and -- sr_share are removed <br>
 
 
 
-## 10 Multi-stage test
+## 9 Multi-stage test
 
 ```
 CUDA_VISIBLE_DEVICES=0  python3 main.py --arch="rtsrn" --test_model="CRNN" --batch_size=48 --STN  --gradient  --use_distill --stu_iter=3 --vis --vis_dir='vis/xxx' --mask --go_test --resume='ckpt/xxx/' --triple_clues --text_focus --lca
@@ -119,7 +100,7 @@ CUDA_VISIBLE_DEVICES=0  python3 main.py --arch="rtsrn" --test_model="CRNN" --bat
 After getting the model after the three-stage training, it is consistent with the training, -- stu=3 and -- sr_ share。
 This command is in test_ Multi.sh, after use, the performance comparison table can be obtained to summarize the results of CRNN, and test can be replaced_ Model can obtain the results of two other text recognizers.
 
-## 11 Related Works 
+## 10 Related Works 
 · Text Gestalt: Stroke-Aware Scene Text Image Super-Resolution [[Paper]](https://arxiv.org/pdf/2112.08171.pdf) [[Code]](https://github.com/FudanVI/FudanOCR)
 
 · A Text Attention Network for Spatial Deformation Robust Scene Text Image Super-resolution [[Paper]](https://arxiv.org/pdf/2203.09388.pdf) [[Code]](https://github.com/mjq11302010044/TATT)
