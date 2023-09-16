@@ -23,7 +23,7 @@ TRAIN:
   saveInterval: 200
   displayInterval: 50 #display loss
   adadelta: False
-  lr: 0.004
+  lr: 0.001
   adam: True
   optimizer: "Adam"
   beta1: 0.5

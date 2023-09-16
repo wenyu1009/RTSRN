@@ -8,12 +8,12 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 def grid_sample(input, grid, canvas = None):
-  output = F.grid_sample(input, grid)
+  output = F.grid_sample(input, grid, align_corners=True)
   if canvas is None:
     return output
   else:
     input_mask = input.data.new(input.size()).fill_(1)
-    output_mask = F.grid_sample(input_mask, grid)
+    output_mask = F.grid_sample(input_mask, grid, align_corners=True)
     padded_output = output * output_mask + canvas * (1 - output_mask)
     return padded_output
 

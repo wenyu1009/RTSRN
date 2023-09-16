@@ -57,7 +57,7 @@ if __name__ == '__main__':
     parser.add_argument('--prob_insert', type=float, default=1., help='')
     parser.add_argument('--rotate_train', type=float, default=0., help='')
     parser.add_argument('--rotate_test', type=float, default=0., help='')
-    parser.add_argument('--learning_rate', type=float, default=0.004, help='')
+    parser.add_argument('--learning_rate', type=float, default=0.001, help='')
     parser.add_argument('--badset', action='store_true', default=False)
     parser.add_argument('--training_stablize', action='store_true', default=False)
     parser.add_argument('--test_distorted_fusing', type=int, default=0)

@@ -22,12 +22,13 @@ Our model is as follows:
 - Finally, a CNN is used to obtain the final super-resolution image $I_{SR}$.
 ## 4 Environment:
 
-Please refer to requirement.txt.
-
+Please refer to the following simple steps for installation. 
 ```
-pip install -r requirements.txt
+git clone https://github.com/wenyu1009/RTSRN.git
+cd RTSRN
+conda env create -f environment.yml
+conda activate rtsrn
 ```
-
 ## 5 Preparation for running
 
 ### Textzoom
@@ -44,7 +45,12 @@ Change TRAIN.VAL.rec_pretrained in ./configs/super_resolution.yaml to your Aster
 ### Download the pth and pkl，which are required in text focus loss
 please refer to  [STT](https://github.com/FudanVI/FudanOCR/tree/main/scene-text-telescope)
 the path of pkl in weight_ce_loss.py       the path of pth in text_focus_loss.py 
-Change these path  for yourself
+Change these path  for yourself.
+
+## Note
+
+- Setting the learning rate to 0.001 is necessary to achieve better performance.
+
 
 ## 6 Single stage train
 
