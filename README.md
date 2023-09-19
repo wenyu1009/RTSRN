@@ -1,5 +1,6 @@
 # Robust Text Super-Resolution Network (RTSRN)
 
+This repository contains the source code for the ACM Multimedia 2023 paper "Pixel Adapter: A Graph-Based Post-Processing Approach for Scene Text Image Super-Resolution", [arxiv link](https://arxiv.org/abs/2309.08919).
 
 
 ## 1 Task Introduction
@@ -47,7 +48,7 @@ please refer to  [STT](https://github.com/FudanVI/FudanOCR/tree/main/scene-text-
 the path of pkl in weight_ce_loss.py       the path of pth in text_focus_loss.py 
 Change these path  for yourself.
 
-## Note
+### Note
 
 - Setting the learning rate to 0.001 is necessary to achieve better performance.
 
